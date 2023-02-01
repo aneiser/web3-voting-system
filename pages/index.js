@@ -143,7 +143,8 @@ export default function Home() {
       address: CONTRACT_ADDRESS,
       fromBlock: DEPLOYMENT_BLOCK
     }
-    let events = await contract.queryFilter(filter)
+    // let events = await contract.queryFilter(filter)
+    let events = await contract.queryFilter("*", -3000, 'latest')
     setSCEvents(events)
   }
 
